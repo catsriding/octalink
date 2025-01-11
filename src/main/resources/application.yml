@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: local
+
+  output:
+    ansi:
+      enabled: always
+
+  devtools:
+    add-properties: false
+
+  jpa:
+    database: mysql
+    open-in-view: false
+    generate-ddl: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    url: ${DATABASE_ENDPOINT_LOCAL}
+    username: ${DATABASE_USERNAME_LOCAL}
+    password: ${DATABASE_PASSWORD_LOCAL}
+
+  data:
+    redis:
+      host: ${REDIS_HOST_LOCAL}
+      port: ${REDIS_PORT_LOCAL}
+      password: ${REDIS_PASSWORD_LOCAL}
+      timeout: 3000
+      connect-timeout: 3000
+      lettuce:
+        shutdown-timeout: 5000
+      repositories:
+        enabled: false
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql: trace
