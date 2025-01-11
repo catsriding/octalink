@@ -25,6 +25,18 @@ spring:
     username: catsriding
     password: catsriding
 
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: jZF3dcCERISFWVTvDt0zidKDJ8CcweUP
+      timeout: 3000
+      connect-timeout: 3000
+      lettuce:
+        shutdown-timeout: 5000
+      repositories:
+        enabled: false
+
 logging:
   level:
     org:
