@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: local
+
+  output:
+    ansi:
+      enabled: always
+
+  devtools:
+    add-properties: false
+
+  jpa:
+    database: mysql
+    open-in-view: false
+    generate-ddl: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/sandbox
+    username: catsriding
+    password: catsriding
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql: trace
